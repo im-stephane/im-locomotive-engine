@@ -1,0 +1,26 @@
+dist: trusty
+sudo: required
+script: "bundle exec rake travis"
+before_script: ./bin/ci/before_build.sh
+before_install:
+  - gem install bundler:2.0.2
+  - nvm install 14.5.0
+after_failure: ./bin/ci/after_failure.sh
+services: mongodb
+rvm:
+  - 2.7.2
+notifications:
+  email:
+    - didier@nocoffee.fr
+  irc: "irc.freenode.org#locomotivecms"
+branches:
+  only:
+    - master
+addons:
+  chrome: stable
+  apt:
+    packages:
+      - dpkg
+  hosts:
+    - locomotive.local
+
