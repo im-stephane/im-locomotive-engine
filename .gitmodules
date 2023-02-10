@@ -1,0 +1,3 @@
+[submodule "im-locomotive-steam"]
+	path = im-locomotive-steam
+	url = https://github.com/im-stephane/im-locomotive-steam.git
